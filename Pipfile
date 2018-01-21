@@ -7,9 +7,3 @@ verify_ssl = true
 [packages]
 
 discord = "*"
-
-
-
-[requires]
-
-python_version = "3.6"
