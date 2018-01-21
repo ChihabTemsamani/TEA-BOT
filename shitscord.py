@@ -3,8 +3,10 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import asyncio
 import time
-from discord_token import token #Token stored in file called discord_token.py as var token
 from copypasta import * #yes this is bad
+
+try:
+	from discord_token import token #Token stored in file called discord_token.py as var token. This is a try loop so the program can run locally or when deployed
 
 #Client loaded and connected
 Client = discord.Client()
@@ -15,7 +17,8 @@ client = commands.Bot(command_prefix = "?")
 async def on_ready():
     print("Bot is online and connected to Discord") #When Bot Connects
 
-commands = ["copypasta"] #All available commands go here
+commands = ["help","copypasta"] #All available commands go here
+cmdlist = (" ".join(commands[0:]))#Make List of available commands
 
 @client.event
 async def on_message(message):
