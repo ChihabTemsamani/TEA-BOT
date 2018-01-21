@@ -15,7 +15,8 @@ client = commands.Bot(command_prefix = "?")
 async def on_ready():
     print("Bot is online and connected to Discord") #When Bot Connects
 
-commands = ["copypasta"] #All available commands go here
+commands = ["help","copypasta"] #All available commands go here
+cmdlist = (" ".join(commands[0:]))#Make List of available commands
 
 @client.event
 async def on_message(message):
