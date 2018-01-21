@@ -30,8 +30,14 @@ async def on_message(message):
 
                 #CopyPasta Serving
                 if command[1].lower()=="copypasta":
-                    print("Copypasta Requested")
+                    if command[2].lower() == "list":
+                        print("Copypasta List Requested")
+                        cpserve=(" ".join(cpnames[0:])) #Get list of CP names
+                        await client.send_message(message.channel, cpserve) #Send List
+
+                        
                     if command[2].lower() in cpnames:
+                        print("Copypasta Requested")
                         cprequest=command[2].lower() #All lowercase name
                         cplocate=cpnames.index(cprequest) #Get index number of CP
                         cpserve=cplist[cplocate] #Get the CP
