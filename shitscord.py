@@ -26,7 +26,7 @@ async def on_message(message):
 
         #checks if input is valid command with weird double if else and acts accordingly
         if len(command) > 1:
-            if command[1] in commands: #If command is correct (all command actions (most of bot) go here)
+            if command[1].lower() in commands: #If command is correct (all command actions (most of bot) go here)
                 if command[1].lower()=="copypasta":
                     print("Copypasta Requested")
                     if command[2].lower() in cpnames:
