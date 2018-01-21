@@ -10,6 +10,7 @@ try:
 except: 
 	print("Token file not found. Trying to import OS")
 	import os
+	token=os.environ.get('token')
 #Client loaded and connected
 Client=discord.Client()
 client=commands.Bot(command_prefix = "?") 
