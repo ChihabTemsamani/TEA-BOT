@@ -28,7 +28,7 @@ async def on_message(message):
         if len(command) > 1:
             if command[1] in commands: #If command is correct (all command actions (most of bot) go here)
                 if command[1].lower="copypasta":
-                    if command[2].lower=
+                    if command[2].lower in cpnames
             else:
                 await client.send_message(message.channel, ":shit:")# If command is incorrect
         else:
