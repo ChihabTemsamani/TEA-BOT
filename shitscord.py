@@ -9,8 +9,8 @@ try:
 	from discord_token import token #Token stored in file called discord_token.py as var token. This is a try loop so the program can run locally or when deployed
 
 #Client loaded and connected
-Client = discord.Client()
-client = commands.Bot(command_prefix = "?") 
+Client=discord.Client()
+client=commands.Bot(command_prefix = "?") 
 
 
 @client.event 
