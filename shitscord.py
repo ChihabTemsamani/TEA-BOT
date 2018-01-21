@@ -27,6 +27,8 @@ async def on_message(message):
         #checks if input is valid command with weird double if else and acts accordingly
         if len(command) > 1:
             if command[1].lower() in commands: #If command is correct (all command actions (most of bot) go here)
+
+                #CopyPasta Serving
                 if command[1].lower()=="copypasta":
                     print("Copypasta Requested")
                     if command[2].lower() in cpnames:
@@ -34,6 +36,7 @@ async def on_message(message):
                         cplocate=cpnames.index(cprequest) #Get index number of CP
                         cpserve=cplist[cplocate] #Get the CP
                         await client.send_message(message.channel, cpserve) #Send CP
+
                         
             else:
                 await client.send_message(message.channel, ":shit:")# If command is incorrect
