@@ -9,7 +9,7 @@ try:
 	from discord_token import token #Token stored in file called discord_token.py as var token. This is a try loop so the program can run locally or when deployed
 except: 
 	print("Token file not found. Trying to import OS")
-	from os import token
+	import os
 #Client loaded and connected
 Client=discord.Client()
 client=commands.Bot(command_prefix = "?") 
