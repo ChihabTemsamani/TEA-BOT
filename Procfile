@@ -1,1 +1,1 @@
-python3: shitscord.py
+worker: python3 shitscord.py
