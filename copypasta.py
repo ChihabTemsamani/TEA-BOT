@@ -1,14 +1,15 @@
 from copypasta_content import *
 from constants import *
 
+
 def copypastascript(command, client, message):
     if len(command) < 3:
         run_coro(client.send_message(message.channel, "You must input a copypasta or `list`"), client)
         return
 
     if command[2].lower() == "list":
-        cpserve = (" ".join(cpnames[0:]))  # Get list of CP names
-        run_coro(client.send_message(message.channel, cpserve), client)  # Send List
+        cpnamesstr = (" ".join(cpnames[0:]))  # Get list of CP names
+        run_coro(client.send_message(message.channel, cpnamesstr), client)  # Send List
 
     elif command[2].lower() in cpnames:
         cprequest = command[2].lower()  # All lowercase name
@@ -18,4 +19,4 @@ def copypastascript(command, client, message):
 
     if len(command) > 3 and command[3].lower() == "-s":
         pass
-        #run_coro(client.delete_message(message), client)  # this broke
+        #  run_coro(client.delete_message(message), client)  # this broke

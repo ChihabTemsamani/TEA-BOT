@@ -1,5 +1,6 @@
 # List of copypastas shown when entering the '!shitscord copypasta list' command
-cpnames = ["navyseals", "buzzwords", "nicejoke", "navyfurs", "navyknights", "navyswag", "navykindergarten", "weeb", ]
+cpnames = ["navyseals", "buzzwords", "nicejoke", "navyfurs", "navyknights", "navyswag", "navykindergarten", "navyweeb",
+           "imnotgay"]
 
 # copypastas themselves, with the exact same name as in cpnames list
 cplist = [
@@ -97,4 +98,16 @@ cplist = [
     "otakus across the USA, and anatano IP is being traced right now so you better junbishimasu for the ame, "
     "ujimushi. The ame that korosu’s the pathetic chiisai thing anata calls anatano life. You’re fucking "
     "shinimashita’d, akachan.",
+    "Now you listen the fuck here, mega tard. I did not serve for 5+ tours in Afghanistan to be fucking called a "
+    "homosexual. I graduated as top dog from the Virginia Military Academy, flew up through the ranks, achieved rank "
+    "of Lieutenant General, and received my purple heart within my first year of service, and returned to combat. Do "
+    "you know what kind of damage a person with my skill set can inflict upon a worthless maggot such as yourself? "
+    "You couldn't even begin to imagine the type of pain you would end up in. I've made tough-as-nails soldiers tear "
+    "up, wet the bed, and call for mama the moment they heard my name. All without even trying. So next time, "
+    "you best think before you start slinging your shit insults around like a deranged monkey in a cage or like one "
+    "of them Afghan folks with their underpowered weaponized retardation. Back the fuck off bud, or you'll be in a "
+    "world of pain that death itself cannot free you from. You'll end up crying out for God himself, claiming that "
+    "you have so much left to live for. You'll explain to The Big Man upstairs how life is meant to be cherished. But "
+    "in your time of need, I won't respond. Think long and hard about what you're saying before you dig your own "
+    "grave. Or else mark my words-- you won't hear the last of it. "
     ]
