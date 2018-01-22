@@ -11,6 +11,12 @@ The bot will autodetect the discord_token file, or lack of. If the file cannot b
 
 Current command sets include:
  - Copypasta
- 
+# Modularity
+Commands are formatted as modules now! Each command has its own python file which the script is imported as a function from.
+Example: the copypasta script is stored in copypasta.py, containting the function copypastascript, and stated in the commands list as copypasta.
+Following this naming scheme, commands can be essentially dynamically added to the bot. This allows less messy development and easier repairs and containment should a command bug out.
+
+
+
 # Copypasta
  The copypasta files are stored in the copypasta.py file where the copypasta name in the cpname variable shares the same index value as the pasta itself in the cptext variable.

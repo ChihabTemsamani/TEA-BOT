@@ -7,4 +7,4 @@ def copypastascript(command):
         cprequest=command[2].lower() #All lowercase name
         cplocate=cpnames.index(cprequest) #Get index number of CP
         cpserve=cplist[cplocate] #Get the CP
-        client.send_message(message.channel, cpserve) #Send CP                     
+        client.send_message(message.channel, cpserve) #Send CP
