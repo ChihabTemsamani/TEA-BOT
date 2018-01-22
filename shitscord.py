@@ -20,7 +20,7 @@ async def on_ready():
     print("Bot is online and connected to Discord")  # When Bot Connects
 
 
-commands = ["copypasta"]  # All available commands go here
+commands = ["copypasta", "help"]  # All available commands go here
 cmdlist = (" ".join(commands[0:]))  # Make List of available commands
 
 # importing commands
@@ -40,12 +40,12 @@ async def on_message(message):
         print("I Have Been Summoned")
         command = message.content.split(" ")
         print("User States:", command)
-
         # checks if input is valid command with weird double if else and acts accordingly
         if len(command) > 1:
             if command[1].lower() in commands:  # If command is correct (all command actions (most of bot) go here)
-                cmdexec = command[1] + "script"
+                cmdexec = command[1] + "script(command)"
                 exec(cmdexec)
+                print(cmdexec)
             else:
                 await client.send_message(message.channel, "Thats not a command")
 
