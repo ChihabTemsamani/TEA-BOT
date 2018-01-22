@@ -2,7 +2,7 @@ from constants import *
 
 
 def helpscript(command, client, message):
-    client.send_message(message.channel, "I shitpost memes and copypastas")
-    client.send_message(message.channel, "Availible commands:")
+    run_coro(client.send_message(message.channel, "I shitpost memes and copypastas"), client)
+    run_coro(client.send_message(message.channel, "Availible commands:"), client)
     commands_str = "`".join(cmdlist[0:]).join("`")
-    client.send_message(message.channel, commands_str)
+    run_coro(client.send_message(message.channel, commands_str), client)
