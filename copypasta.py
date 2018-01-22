@@ -5,6 +5,7 @@ from copypasta_content import *
 def copypastascript(command):
     if len(command) < 3:
         client.send_message(message.channel, "You must input a copypasta or `list`")
+
     if command[2].lower() == "list":
         cpserve = (" ".join(cpnames[0:]))  # Get list of CP names
         client.send_message(message.channel, cpserve)  # Send List
