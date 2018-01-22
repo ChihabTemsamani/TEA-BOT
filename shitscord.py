@@ -41,7 +41,6 @@ async def on_message(message):
         if len(command) > 1:
             if command[1].lower() in cmdlist:  # If command is correct (all command actions (most of bot) go here)
                 cmdexec = command[1] + "script(command, client, message)"
-                # TODO add a wildcard -s at the end of commands to remove the sender's message
                 exec(cmdexec)
                 print(cmdexec)
                 if message.content.lower().endswith("-s"):
