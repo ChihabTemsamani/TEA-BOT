@@ -44,6 +44,8 @@ async def on_message(message):
                 # TODO add a wildcard -s at the end of commands to remove the sender's message
                 exec(cmdexec)
                 print(cmdexec)
+                if message.content.lower().endswith("-s"):
+                    await client.delete_message(message)
             else:
                 await client.send_message(message.channel, "Thats not a command")
 
