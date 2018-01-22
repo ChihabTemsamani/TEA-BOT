@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from constants import *
 
 try:
     from discord_token import token
@@ -19,15 +20,11 @@ client = commands.Bot(command_prefix="!")
 async def on_ready():
     print("Bot is online and connected to Discord")  # When Bot Connects
 
-
-commands = ["copypasta", "help"]  # All available commands go here
-cmdlist = (" ".join(commands[0:]))  # Make List of available commands
-
 # importing commands
 x = 0
-while x < len(commands):
-    filename = str(commands[x])
-    funcname = str(commands[x]) + "script"
+while x < len(cmdlist):
+    filename = str(cmdlist[x])
+    funcname = str(cmdlist[x]) + "script"
     importfunc = "from " + filename + " import " + funcname
     print(importfunc)
     exec(importfunc)
@@ -42,8 +39,8 @@ async def on_message(message):
         print("User States:", command)
         # checks if input is valid command with weird double if else and acts accordingly
         if len(command) > 1:
-            if command[1].lower() in commands:  # If command is correct (all command actions (most of bot) go here)
-                cmdexec = command[1] + "script(command)"
+            if command[1].lower() in cmdlist:  # If command is correct (all command actions (most of bot) go here)
+                cmdexec = command[1] + "script(command, client, message)"
                 exec(cmdexec)
                 print(cmdexec)
             else:
