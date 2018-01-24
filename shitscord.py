@@ -1,16 +1,26 @@
 import discord
 from discord.ext import commands
 from constants import *
+import os
 
 try:
     from discord_token import token
     # Token stored in file called discord_token.py as var token.
     # This is a try loop so the program can run locally or when deployed
 except ImportError:
-    print("Token file not found. Trying to import OS")
-    import os
-
+    print("Token file not found. Using var from OS")
     token = os.environ.get('token')
+    
+#Read Reddit auth either locally or from global var
+try:
+    from reddit_config import client_id
+    from reddit_config import client_secret
+    from reddit_config import user_agent
+except ImportError:
+    print("Token file not found. Using var from OS")
+    client_id = os.environ.get('client_id')
+    client_secret = os.environ.get('client_secret')
+    user_agent = os.environ.get('user_agent')
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")

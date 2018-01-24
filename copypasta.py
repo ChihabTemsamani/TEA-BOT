@@ -1,6 +1,5 @@
 from copypasta_content import *
 from constants import *
-import reddit_config
 import praw
 
 
