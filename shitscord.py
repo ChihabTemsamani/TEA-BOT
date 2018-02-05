@@ -4,12 +4,12 @@ from constants import *
 import os
 
 try:
-    from discord_token import token
+    from discord_token import discord_token
     # Token stored in file called discord_token.py as var token.
     # This is a try loop so the program can run locally or when deployed
 except ImportError:
     print("Token file not found. Using var from OS")
-    token = os.environ.get('discord_token')
+    discord_token = os.environ.get('discord_token')
     
 #Read Reddit auth either locally or from global var
 try:
@@ -76,4 +76,4 @@ async def on_message(message):
             await client.send_message(message.channel, ":shit:")  # If no command is given
 
 
-client.run(token)
+client.run(discord_token)
