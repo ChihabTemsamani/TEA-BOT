@@ -30,7 +30,7 @@ except ImportError:
     client_secret = os.environ.get('client_secret')
     user_agent = os.environ.get('user_agent')
     
-    reddit_conf_file = open("reddit_config.py")
+    reddit_conf_file = open("reddit_config.py","w+")
     reddit_conf_file.write("client_id = ", client_id)
     reddit_conf_file.write("client_secret = ", client_secret)
     reddit_conf_file.write("user_agent = ", user_agent)
