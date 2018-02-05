@@ -31,9 +31,9 @@ except ImportError:
     user_agent = os.environ.get('user_agent')
     
     reddit_conf_file = open("reddit_config.py","w+")
-    reddit_conf_file.write("client_id = " + client_id)
-    reddit_conf_file.write("client_secret = " + client_secret)
-    reddit_conf_file.write("user_agent = " + user_agent)
+    reddit_conf_file.write("client_id = '" + client_id +"'\n")
+    reddit_conf_file.write("client_secret = '" + client_secret +"'\n")
+    reddit_conf_file.write("user_agent = '" + user_agent +"'\n")
     reddit_conf_file.close()
 
 Client = discord.Client()
