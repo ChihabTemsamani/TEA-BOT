@@ -1,7 +1,7 @@
 from copypasta_content import *
 from constants import *
 import praw
-
+import reddit_config
 
 def copypastascript(command, client, message):
     if len(command) < 3:
