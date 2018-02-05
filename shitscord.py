@@ -1,16 +1,40 @@
 import discord
 from discord.ext import commands
 from constants import *
+import os
 
 try:
     from discord_token import token
     # Token stored in file called discord_token.py as var token.
     # This is a try loop so the program can run locally or when deployed
 except ImportError:
-    print("Token file not found. Trying to import OS")
-    import os
-
-    token = os.environ.get('token')
+    print("Token file not found. Using var from OS")
+    token = os.environ.get('discord_token')
+    
+#Read Reddit auth either locally or from global var
+try:
+    from reddit_config import client_id
+    from reddit_config import client_secret
+    from reddit_config import user_agent
+    print(client_id)    
+    reddit_client_id = client_id
+    reddit_client_secret = client_secret
+    reddit_user_agent = user_agent
+    
+    
+    
+except ImportError:
+    print("Token file not found. Using var from OS")
+    
+    client_id = os.environ.get('client_id')
+    client_secret = os.environ.get('client_secret')
+    user_agent = os.environ.get('user_agent')
+    
+    reddit_conf_file = open("reddit_config.py")
+    reddit_conf_file.write("client_id = ", client_id)
+    reddit_conf_file.write("client_secret = ", client_secret)
+    reddit_conf_file.write("user_agent = ", user_agent)
+    reddit_conf_file.close()
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
@@ -41,9 +65,10 @@ async def on_message(message):
         if len(command) > 1:
             if command[1].lower() in cmdlist:  # If command is correct (all command actions (most of bot) go here)
                 cmdexec = command[1] + "script(command, client, message)"
-                # TODO add a wildcard -s at the end of commands to remove the sender's message
                 exec(cmdexec)
                 print(cmdexec)
+                if message.content.lower().endswith("-s"):
+                    await client.delete_message(message)
             else:
                 await client.send_message(message.channel, "Thats not a command")
 

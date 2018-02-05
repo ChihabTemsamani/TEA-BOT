@@ -1,5 +1,6 @@
 # List of copypastas shown when entering the '!shitscord copypasta list' command
-cpnames = ["navyseals", "buzzwords", "nicejoke", "navyfurs", "navyknights", "navyswag", "navykindergarten", "weeb", ]
+cpnames = ["navyseals", "buzzwords", "nicejoke", "navyfurs", "navyknights", "navyswag", "navykindergarten", "navyweeb",
+           "imnotgay", "ipadgirl", "extrathicc", "theintent", "whitehouse"]
 
 # copypastas themselves, with the exact same name as in cpnames list
 cplist = [
@@ -97,4 +98,53 @@ cplist = [
     "otakus across the USA, and anatano IP is being traced right now so you better junbishimasu for the ame, "
     "ujimushi. The ame that korosu’s the pathetic chiisai thing anata calls anatano life. You’re fucking "
     "shinimashita’d, akachan.",
+    "Now you listen the fuck here, mega tard. I did not serve for 5+ tours in Afghanistan to be fucking called a "
+    "homosexual. I graduated as top dog from the Virginia Military Academy, flew up through the ranks, achieved rank "
+    "of Lieutenant General, and received my purple heart within my first year of service, and returned to combat. Do "
+    "you know what kind of damage a person with my skill set can inflict upon a worthless maggot such as yourself? "
+    "You couldn't even begin to imagine the type of pain you would end up in. I've made tough-as-nails soldiers tear "
+    "up, wet the bed, and call for mama the moment they heard my name. All without even trying. So next time, "
+    "you best think before you start slinging your shit insults around like a deranged monkey in a cage or like one "
+    "of them Afghan folks with their underpowered weaponized retardation. Back the fuck off bud, or you'll be in a "
+    "world of pain that death itself cannot free you from. You'll end up crying out for God himself, claiming that "
+    "you have so much left to live for. You'll explain to The Big Man upstairs how life is meant to be cherished. But "
+    "in your time of need, I won't respond. Think long and hard about what you're saying before you dig your own "
+    "grave. Or else mark my words-- you won't hear the last of it.",
+    "Don’t even get me fucking started on this. I hate that fucking ad so god damn much it’s insane. The stupid "
+    "fucking bitch waltzing around brooklyn or whatever the fuck with her stupid ass fucking ipad acting like she "
+    "owns the fucking world. Nobody gives a fuck about his broken arm. And what the fuck is that shit in the taco "
+    "shop where she slaps the fucking iPad down like a fucking viking. Fuck you. Then she sits on a fucking tree "
+    "making some dumb fucking bug poster for no fucking reason I wish she fell out of that fucking tree. and finally "
+    "she gets home and her nice fucking neighbor asks her a simple ass question AND SHE HAS THE AUDACITY TO SAY WHATS "
+    "A COMPUTER WHAT THE FUCK FUCK YOU FUCK",
+    "卂乃匚刀乇下厶卄工丁长乚从𠘨口尸㔿尺丂丅凵リ山乂丫乙",
+    "The 💰 intent 💰 is 💰 to 💰 provide 💰 players 💰 with 💰 a 💰 sense 💰 of 💰 pride 💰 and 💰 accomplishment 💰 "
+    "for 💰 unlocking 💰 different 💰 heroes. 💰 As 💰 for 💰 cost, 💰 we 💰 selected 💰 initial 💰 values 💰 based "
+    "💰 upon 💰 data 💰 from 💰 the 💰 Open 💰 Beta 💰 and 💰 other 💰 adjustments 💰 made 💰 to 💰 milestone 💰 "
+    "rewards 💰 before 💰 launch. 💰 Among 💰 other 💰 things, 💰 we're 💰 looking 💰 at 💰 average 💰 per-player 💰 "
+    "credit 💰 earn 💰 rates 💰 on 💰 a 💰 daily 💰 basis, 💰 and 💰 we'll 💰 be 💰 making 💰 constant 💰 adjustments "
+    "💰 to 💰 ensure 💰 that 💰 players 💰 have 💰 challenges 💰 that 💰 are 💰 compelling, 💰 rewarding, "
+    "💰 and 💰 of 💰 course 💰 attainable 💰 via 💰 gameplay. We 💰 appreciate 💰 the 💰 candid 💰 feedback, "
+    "💰 and 💰 the 💰 passion 💰 the 💰 community 💰 has 💰 put 💰 forth 💰 around 💰 the 💰 current 💰 topics 💰 "
+    "here 💰 on 💰 Reddit, 💰 our 💰 forums 💰 and 💰 across 💰 numerous 💰 social 💰 media 💰 outlets. Our 💰 team "
+    "💰 will 💰 continue 💰 to 💰 make 💰 changes 💰 and 💰 monitor 💰 community 💰 feedback 💰 and 💰 update 💰 "
+    "everyone 💰 as 💰 soon 💰 and 💰 as 💰 often 💰 as 💰 we 💰 can. 💰 💰 ",
+    "How exactly does one get pussy while living at the white house as a teenage boy? The secret service always cock "
+    "blocking you. when you're trying to run game on some foreign prime ministers daughter the news media catches you "
+    "smiling at her and immediately blows shit out if proportion speculating that you are somehow breaking "
+    "international law with your awkward teenage flirting, so you have to testify before congress that you didn't "
+    "give away any top secret documents to her and are made to admit live on C-SPAN that you've never even kissed a "
+    "girl . Then you get blue balls from some hot conservative girl winking at you and flashing her panties under her "
+    "skirt and making sexy faces and blow job motions to you while you were going through some airport or public "
+    "event, and when you passed by and shook her hand she leans in whispering she is going to diddle her clit "
+    "thinking about you tonight and how much she wants to suck your dick off, just to fuck with you. Then you try to "
+    "look up some porn when you get home just to relieve the tension but you just know the CIA is monitoring and 3 "
+    "other govornment agencies are watching you beat off. Then you finally break down and Jack off in the shower "
+    "which sets off some fucking biohazard drain alarm and the entire place is on lock down until they can find the "
+    "source of the specimen and you end up getting debriefed by the joint chiefs of staff about your masturbatory "
+    "habits and how you almost created a national security issue with your dick. Then wikileaks leaks your search "
+    "history showing you looked up penis enlargement techniques when it was actually just some click bait you'd "
+    "accidentally clicked and TYT spends all next week talking about your supposed micro penis. So you end up "
+    "squirming a little since you are so wound up and being judged constantly and now people are saying you look like "
+    "a fucking mental patient and you start to think you'll never get any pussy. "
     ]
