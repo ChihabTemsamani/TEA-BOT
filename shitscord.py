@@ -9,18 +9,32 @@ try:
     # This is a try loop so the program can run locally or when deployed
 except ImportError:
     print("Token file not found. Using var from OS")
-    token = os.environ.get('token')
+    token = os.environ.get('discord_token')
     
 #Read Reddit auth either locally or from global var
 try:
     from reddit_config import client_id
     from reddit_config import client_secret
     from reddit_config import user_agent
+    print(client_id)    
+    reddit_client_id = client_id
+    reddit_client_secret = client_secret
+    reddit_user_agent = user_agent
+    
+    
+    
 except ImportError:
     print("Token file not found. Using var from OS")
+    
     client_id = os.environ.get('client_id')
     client_secret = os.environ.get('client_secret')
     user_agent = os.environ.get('user_agent')
+    
+    reddit_conf_file = open("reddit_config.py")
+    reddit_conf_file.write("client_id = ", client_id)
+    reddit_conf_file.write("client_secret = ", client_secret)
+    reddit_conf_file.write("user_agent = ", user_agent)
+    reddit_conf_file.close()
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
