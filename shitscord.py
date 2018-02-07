@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from constants import *
 import os
-
+import time
 try:
     from discord_token import discord_token
     # Token stored in file called discord_token.py as var token.
@@ -35,6 +35,8 @@ except ImportError:
     reddit_conf_file.write("client_secret = '" + client_secret +"'\n")
     reddit_conf_file.write("user_agent = '" + user_agent +"'\n")
     reddit_conf_file.close()
+    time.sleep(3)
+    
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
