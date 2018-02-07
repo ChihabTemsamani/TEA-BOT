@@ -1,1 +1,1 @@
-token=("token")
+discord_token=("token")
