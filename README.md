@@ -2,6 +2,9 @@
 An automatic shitposter for discord
 
 # Use
+
+NOTE: The Discord token is no longer stored in the variable "token", but rather "discord_token"
+
 To use simply run the bot on a linux machine with python3 installed and the discord pip3 module, or a script hosting platform like Heroku.
 Be sure to clone the `master` branch, and not `dev` as `dev` is the build we are currently working on, with new and possibly broken features.
 
@@ -19,7 +22,6 @@ Commands are formatted as modules now! Each command has its own python file whic
 Example: the copypasta script is stored in copypasta.py, containting the function copypastascript, and stated in the commands list as copypasta.
 Following this naming scheme, commands can be essentially dynamically added to the bot. This allows less messy development and easier repairs and containment should a command bug out.
 
-
-
 # Copypasta
- The copypasta files are stored in the copypasta.py file where the copypasta name in the cpname variable shares the same index value as the pasta itself in the cptext variable.
+ The copypasta files are stored in the copypasta_content.py file where the copypasta name in the cpname variable shares the same index value as the pasta itself in the cptext variable.
+ If supplied with Reddit API keys the bot can automatically pull copypastas from Reddit, and the bot will automatically split the text by its spaces into <2000 character messages for Discord.
