@@ -34,8 +34,8 @@ except ImportError:
     reddit_conf_file.close()
     time.sleep(3)
     
-if not os.path.exists(images):
-    os.makedirs(images)    
+if not os.path.exists("images"):
+    os.makedirs("images")    
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
