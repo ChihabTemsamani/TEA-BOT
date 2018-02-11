@@ -1,8 +1,6 @@
-import discord
 from discord.ext import commands
 from constants import *
-import os
-import time
+import discord, os, time
 try:
     from discord_token import discord_token
     # Token stored in file called discord_token.py as var token.
@@ -15,13 +13,12 @@ except ImportError:
 try:
     from reddit_config import client_id
     from reddit_config import client_secret
-    from reddit_config import user_agent
-    print(client_id)    
+    from reddit_config import user_agent 
     reddit_client_id = client_id
     reddit_client_secret = client_secret
     reddit_user_agent = user_agent
     
-    
+
     
 except ImportError:
     print("Token file not found. Using var from OS")
@@ -37,6 +34,8 @@ except ImportError:
     reddit_conf_file.close()
     time.sleep(3)
     
+if not os.path.exists(images):
+    os.makedirs(images)    
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
