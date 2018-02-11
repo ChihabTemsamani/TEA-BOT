@@ -15,8 +15,7 @@ except ImportError:
 try:
     from reddit_config import client_id
     from reddit_config import client_secret
-    from reddit_config import user_agent
-    print(client_id)    
+    from reddit_config import user_agent 
     reddit_client_id = client_id
     reddit_client_secret = client_secret
     reddit_user_agent = user_agent
