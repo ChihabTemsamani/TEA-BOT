@@ -1,5 +1,5 @@
 from constants import *
-import praw, reddit_config, urllib.request, random, time
+import praw, reddit_config, urllib.request, random, time, os
 
 def me_irlscript(command, client, message):
     print("Getting random image from me_irl")
@@ -26,8 +26,11 @@ def me_irlscript(command, client, message):
         file_name="images/"+str(random.randint(1,1000))+".gif"            
     print("Downloading image from: ", url)
     urllib.request.urlretrieve(url, file_name)
-    print("Image placed at: ",file_name)
+    open(file_name + ".lock","a").close()
+    print("Image placed at: ",file_name," and locked")
     time.sleep(1)
     print("Sending Image")
     run_coro(client.send_file(message.channel, file_name), client) # Send Image
     print("Sent Image")
+    os.remove(file_name + ".lock")
+    print(file_name, " unlocked.")
