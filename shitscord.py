@@ -1,13 +1,13 @@
 from discord.ext import commands
 from constants import *
-import discord, os, time
+import discord, os, time, threading
 try:
-    from discord_token import discord_token
+    from discord_token import token
     # Token stored in file called discord_token.py as var token.
     # This is a try loop so the program can run locally or when deployed
 except ImportError:
     print("Token file not found. Using var from OS")
-    discord_token = os.environ.get('discord_token')
+    token = os.environ.get('discord_token')
     
 #Read Reddit auth either locally or from global var
 try:
@@ -44,6 +44,9 @@ client = commands.Bot(command_prefix="!")
 @client.event
 async def on_ready():
     print("Bot is online and connected to Discord")  # When Bot Connects
+    for service in services:
+        exec("import " + service)
+        exec("threading.Thread(target=" + service + ".Service).start()")
 
 # importing commands
 x = 0
@@ -77,4 +80,4 @@ async def on_message(message):
             await client.send_message(message.channel, ":shit:")  # If no command is given
 
 
-client.run(discord_token)
+client.run(token)
