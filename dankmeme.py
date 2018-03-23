@@ -1,11 +1,19 @@
 from constants import *
 import praw, reddit_config, urllib.request, random, time, os
 
-def me_irlscript(command, client, message):
+def dankmemescript(command, client, message):
+    subredditchoice=["me_irl","trippinthroughtime","youdontsurf","WatchPeopleDieInside","vsaucememes","trebuchetmemes","SpaceXMasterrace","ProgrammerHumor","lossedits","labelmemes","masterhacker"]
+    subredditcount=len(subredditchoice)
+    chosenreddit=random.randint(0,subredditcount-1)
+    print("Choosing subreddit number", chosenreddit)
+    srname=subredditchoice[int(chosenreddit)]
+    
+    
     print("Getting random image from me_irl")
     reddit = praw.Reddit(client_id=reddit_config.client_id, client_secret=reddit_config.client_secret,
                          user_agent=reddit_config.user_agent)
-    sr = reddit.subreddit("me_irl")
+    print(srname)
+    sr = reddit.subreddit(srname)
     x=True
     accepted_type= ["jpg","peg","png","gif"] #last three characters of image file extensions
     while x:
