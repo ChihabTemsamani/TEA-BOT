@@ -77,7 +77,7 @@ async def on_message(message):
                 await client.send_message(message.channel, "Thats not a command")
 
         else:
-            await client.send_message(message.channel, ":shit:")  # If no command is given
+            await client.send_message(message.channel, ":poop:")  # If no command is given
 
 
 client.run(token)

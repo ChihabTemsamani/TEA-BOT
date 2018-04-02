@@ -29,13 +29,9 @@ def dankmemescript(command, client, message):
     while x:
         sub = reddit.subreddit(srname)
         srposts = [post for post in sub.hot(limit=postcount)]
-        randpostnum = random.randint(0, postcount)
+        randpostnum = random.randint(0, postcount-1)
         randpost = srposts[randpostnum]
         url = str(randpost.url)
-        
-        
-        
-        #url = str(sr.random().url)
         url_type=url[-3:]
         print(url)
         print(url_type)
