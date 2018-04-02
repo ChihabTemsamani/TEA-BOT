@@ -2,22 +2,36 @@ from constants import *
 import praw, reddit_config, urllib.request, random, time, os
 
 def dankmemescript(command, client, message):
-    subredditchoice=["me_irl","trippinthroughtime","youdontsurf","WatchPeopleDieInside","vsaucememes","trebuchetmemes","SpaceXMasterrace","ProgrammerHumor","lossedits","labelmemes","masterhacker"]
+    subredditchoice=["me_irl","trippinthroughtime","youdontsurf","vsaucememes","trebuchetmemes","dankmemes","lossedits","labelmemes","meirl"]
+    
     subredditcount=len(subredditchoice)
     chosenreddit=random.randint(0,subredditcount-1)
     print("Choosing subreddit number", chosenreddit)
     srname=subredditchoice[int(chosenreddit)]
     
     
-    print("Getting random image from me_irl")
+    
     reddit = praw.Reddit(client_id=reddit_config.client_id, client_secret=reddit_config.client_secret,
                          user_agent=reddit_config.user_agent)
-    print(srname)
+    print("Getting random image from", srname)
     sr = reddit.subreddit(srname)
+    
+    #Find the max amount of posts in a subreddit, or whatever reddit tops out at (usually 100) in order to prevent index errors
+    #Max posts stored as postcount variable
+    postcount = 0
+    for _ in reddit.subreddit(srname).search('', sort='hot'):
+        postcount += 1
+    print("Post range = ",postcount)
+    
+    
     x=True
-    accepted_type= ["jpg","peg","png","gif"] #last three characters of image file extensions
+    accepted_type= ["jpg","peg","png"] #last three characters of image file extensions
     while x:
-        url = str(sr.random().url)
+        sub = reddit.subreddit(srname)
+        srposts = [post for post in sub.hot(limit=postcount)]
+        randpostnum = random.randint(0, postcount-1)
+        randpost = srposts[randpostnum]
+        url = str(randpost.url)
         url_type=url[-3:]
         print(url)
         print(url_type)
@@ -29,9 +43,7 @@ def dankmemescript(command, client, message):
     if url_type=="jpeg":
         file_name="images/"+str(random.randint(1,1000))+".jpeg"
     if url_type=="png":
-        file_name="images/"+str(random.randint(1,1000))+".png"
-    if url_type=="gif":
-        file_name="images/"+str(random.randint(1,1000))+".gif"            
+        file_name="images/"+str(random.randint(1,1000))+".png"           
     print("Downloading image from: ", url)
     urllib.request.urlretrieve(url, file_name)
     open(file_name + ".lock","a").close()
@@ -42,3 +54,4 @@ def dankmemescript(command, client, message):
     print("Sent Image")
     os.remove(file_name + ".lock")
     print(file_name, " unlocked.")
+    
