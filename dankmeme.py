@@ -14,12 +14,11 @@ def dankmemescript(command, client, message):
     reddit = praw.Reddit(client_id=reddit_config.client_id, client_secret=reddit_config.client_secret,
                          user_agent=reddit_config.user_agent)
     print("Getting random image from", srname)
-    sr = reddit.subreddit(srname)
     
     #Find the max amount of posts in a subreddit, or whatever reddit tops out at (usually 100) in order to prevent index errors
     #Max posts stored as postcount variable
     postcount = 0
-    for _ in reddit.subreddit(srname).search('', sort='hot'):
+    for post in reddit.subreddit(srname).top(limit = 100):
         postcount += 1
     print("Post range = ",postcount)
     
