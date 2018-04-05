@@ -18,14 +18,12 @@ def subredditscript(command, client, message):
     except:
         print("Invalid Subreddit")
         run_coro(client.send_message(message.channel, "Invalid Subreddit"), client)
-    else:
+    else: 
         
-    
-        
-        #Find the max amount of posts in a subreddit, or whatever reddit tops out at (usually 100) in order to prevent index errors
+        #Find the max amount of posts in a subreddit, or whatever reddit tops out at
         #Max posts stored as postcount variable
         postcount = 0
-        for _ in reddit.subreddit(srname).search('', sort='hot'):
+        for post in reddit.subreddit(srname).top(limit = 100):
             postcount += 1
         print("Post range = ",postcount)
         
