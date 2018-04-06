@@ -7,3 +7,5 @@ def helpscript(command, client, message):
     commands_str = "`" + ", ".join(cmdlist[0:]) + "`"
     run_coro(client.send_message(message.channel, commands_str), client)
     run_coro(client.send_message(message.channel, "You can end any command in `-s` to delete your message."), client)
+    run_coro(client.send_message(message.channel, "Type !shitscord help `command` help to see command specific help"), client)
+    print("help info requested")
