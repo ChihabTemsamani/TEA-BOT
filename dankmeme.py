@@ -2,27 +2,20 @@ from constants import *
 import praw, reddit_config, urllib.request, random, time, os
 
 def dankmemescript(command, client, message):
-    subredditchoice=["me_irl","trippinthroughtime","youdontsurf","vsaucememes","trebuchetmemes","dankmemes","lossedits","labelmemes","meirl"]
-    
+    subredditchoice=["me_irl","trippinthroughtime","youdontsurf","vsaucememes","trebuchetmemes","dankmemes","lossedits","labelmemes","meirl"]    
     subredditcount=len(subredditchoice)
     chosenreddit=random.randint(0,subredditcount-1)
     print("Choosing subreddit number", chosenreddit)
-    srname=subredditchoice[int(chosenreddit)]
-    
-    
-    
+    srname=subredditchoice[int(chosenreddit)]    
     reddit = praw.Reddit(client_id=reddit_config.client_id, client_secret=reddit_config.client_secret,
                          user_agent=reddit_config.user_agent)
-    print("Getting random image from", srname)
-    
+    print("Getting random image from", srname)    
     #Find the max amount of posts in a subreddit, or whatever reddit tops out at (usually 100) in order to prevent index errors
     #Max posts stored as postcount variable
     postcount = 0
     for post in reddit.subreddit(srname).top(limit = 100):
         postcount += 1
-    print("Post range = ",postcount)
-    
-    
+    print("Post range = ",postcount)   
     x=True
     accepted_type= ["jpg","peg","png"] #last three characters of image file extensions
     while x:
