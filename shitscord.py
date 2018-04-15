@@ -39,11 +39,13 @@ if not os.path.exists("images"):
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
-
+loggingchannel = discord.Object(id=435092761268584450)
 
 @client.event
 async def on_ready():
     print("Bot is online and connected to Discord")  # When Bot Connects
+    await client.send_message(loggingchannel, "Bot Online")
+
     for service in services:
         exec("import " + service)
         exec("threading.Thread(target=" + service + ".Service).start()")
