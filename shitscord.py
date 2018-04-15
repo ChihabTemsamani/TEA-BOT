@@ -78,6 +78,6 @@ async def on_message(message):
 
         else:
             await client.send_message(message.channel, ":poop:")  # If no command is given
-
+            await client.send_message(message.channel, "Type !shitscord 'help' or 'about' for more information.")
 
 client.run(token)
