@@ -11,7 +11,6 @@ def subredditscript(command, client, message):
         print("Getting random image from",srname)
         reddit = praw.Reddit(client_id=reddit_config.client_id, client_secret=reddit_config.client_secret,
                              user_agent=reddit_config.user_agent)
-<<<<<<< HEAD
     
     #Check to make sure subreddit exists
     try:
@@ -72,7 +71,6 @@ def subredditscript(command, client, message):
             print("Sent Image")
             os.remove(file_name + ".lock")
             print(file_name, " unlocked.")
-=======
             #Check to make sure subreddit exists
         try:
             reddit.subreddits.search_by_name(srname, exact=True)
@@ -128,7 +126,6 @@ def subredditscript(command, client, message):
                 print("Sent Image")
                 os.remove(file_name + ".lock")
                 print(file_name, " unlocked.")
-    else:
-        print("Invalid media type")
-        run_coro(client.send_message(message.channel, "Invalid Media Type"), client)
->>>>>>> 25b579954c2e96dc91757eebe11870f9e16333db
+            else:
+                print("Invalid media type")
+                run_coro(client.send_message(message.channel, "Invalid Media Type"), client)
