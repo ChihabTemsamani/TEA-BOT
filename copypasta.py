@@ -1,37 +1,34 @@
-from copypasta_content import *
 from constants import *
+from importlib import reload
 import praw, reddit_config, time
+import cpindex
+
+
 
 def copypastascript(command, client, message):
     if len(command) < 3:
-        run_coro(client.send_message(message.channel, "You must input a copypasta or `list`"), client)
+        run_coro(client.send_message(message.channel, "You must input a copypasta, `list`, or random"), client)
         return
 
+
+    #Copypasta List
     if command[2].lower() == "list":
-        cpnamesstr = (" ".join(cpnames[0:]))  # Get list of CP names
+        cpnames = reload(cpindex)
+        cpnamesstr = (" ".join(cpnames.cplibrary[0:]))  # Get list of CP names
         run_coro(client.send_message(message.channel, cpnamesstr), client)  # Send List
         run_coro(client.send_message(message.channel, "You can also try `random` to try your luck."), client)
 
+
+    #Copypasta random
     elif command[2].lower() == "random":
-        char_length_2000_debug=False # Requires pasta to be >2000 if true, for testing purposes
         print("Trying to get a random CP from reddit. This could take a moment.")
         reddit = praw.Reddit(client_id=reddit_config.client_id, client_secret=reddit_config.client_secret,
                              user_agent=reddit_config.user_agent)
-        if char_length_2000_debug==True:
-            g=True
-            ranpasta_len=0
-            while g:
-                sr = reddit.subreddit("copypasta")
-                random_pasta=sr.random().selftext #Pasta acquired
-                ranpasta_len=len(random_pasta) #length of pasta found to allow for proper message division
-                print("Copypasta Length in Characters: ", ranpasta_len)
-                if ranpasta_len>2000:
-                    g=False
-        else:
-            sr = reddit.subreddit("copypasta")
-            random_pasta=sr.random().selftext #Pasta acquired
-            ranpasta_len=len(random_pasta) #length of pasta found to allow for proper message division
-            print("Copypasta Length in Characters: ", ranpasta_len)           
+
+        sr = reddit.subreddit("copypasta")
+        random_pasta=sr.random().selftext #Pasta acquired
+        ranpasta_len=len(random_pasta) #length of pasta found to allow for proper message division
+        print("Copypasta Length in Characters: ", ranpasta_len)           
         print("Collected random CP")
         if ranpasta_len < 2000:
             run_coro(client.send_message(message.channel, random_pasta), client)
@@ -41,7 +38,6 @@ def copypastascript(command, client, message):
             
             while x<ranpasta_len: #loops until every character in the message has been sent
                 ranpasta_output=""
-                print("ranpasta_output Var reset")
                 y=True
                 while y:
                     if z<ranpasta_len: #Go to 2000th character and find last space before that character
