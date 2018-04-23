@@ -1,5 +1,5 @@
 from multiprocessing import Process
-import os, time
+import os, time, asyncio
 
 #This is just the boot file which launches the threads. All the botty-goodness is in bot.py.
 

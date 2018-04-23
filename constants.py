@@ -1,7 +1,6 @@
 import asyncio
 
 cmdlist = ["help","about","copypasta", "dankmeme", "cache","subreddit"]  # All available commands go here
-services = ["clean"]
 
 versionnumber="1.38"
 

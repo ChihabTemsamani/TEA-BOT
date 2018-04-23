@@ -58,7 +58,6 @@ while x < len(cmdlist):
     funcname = str(cmdlist[x]) + "script"
     importfunc = "from " + filename + " import " + funcname
     print(importfunc)
-    exec(importfunc)
     x += 1
 
 
