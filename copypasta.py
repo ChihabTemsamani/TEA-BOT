@@ -45,5 +45,5 @@ def script(command, client, message):
         lfile=open(lname,"r",encoding="utf8")
         
         pasta= lfile.read()
-
+        
     textsend.send(pasta, client, message)

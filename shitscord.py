@@ -1,5 +1,5 @@
 from multiprocessing import Process
-import os, time, asyncio
+import os, time
 
 #This is just the boot file which launches the threads. All the botty-goodness is in bot.py.
 
@@ -13,7 +13,7 @@ def fgprocess():
 if __name__ == '__main__':
   p1 = Process(target=bgprocess)
   p1.start()
-  time.sleep(5)
+  time.sleep(10)
   p2 = Process(target=fgprocess)
   p2.start()
   p1.join()
