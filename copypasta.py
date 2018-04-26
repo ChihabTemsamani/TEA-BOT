@@ -1,6 +1,6 @@
 from constants import *
 from importlib import reload
-from textsend import textmessagesend
+import textsend
 import praw, reddit_config, random, requests
 import cpindex
 
@@ -17,7 +17,7 @@ def script(command, client, message):
     if command[2].lower() == "list":
         cpnames = reload(cpindex)
         cpnamesstr = (" ".join(cpnames.cplibrary[0:]))  # Get list of CP names
-        textmessagesend(cpnamesstr, client, message)  # Send List
+        textsend.send(cpnamesstr, client, message)  # Send List
         run_coro(client.send_message(message.channel, "You can also try `random` to try your luck."), client)
         return
 
@@ -32,7 +32,7 @@ def script(command, client, message):
         pasta=sr.random().selftext #Pasta acquired
         
         
-    #Valid copypasta Name  
+    #Valid copypasta name, gets url, downloads file, reads file, sends text
     elif command[2].lower() in cpindex.cplibrary:
         cpname = command[2].lower()  # All lowercase name
         cpurl=("http://raw.githubusercontent.com/Shitscord/cp-lib/master/"+cpname+".txt")
@@ -41,7 +41,9 @@ def script(command, client, message):
         lname=("temp/"+str(randint)+".txt")
         with open(lname, "wb") as w:
             w.write(durl.content)
+            
         lfile=open(lname,"r",encoding="utf8")
+        
         pasta= lfile.read()
 
-    textmessagesend(pasta, client, message)
+    textsend.send(pasta, client, message)

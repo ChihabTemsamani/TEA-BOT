@@ -2,8 +2,8 @@ import time
 from constants import *
 
 
-def textmessagesend(text, client, message):
-    debug=1
+def send(text, client, message):
+    debug=0
     text_len=len(text) #length of pasta found to allow for proper message division
     if debug==1:
         run_coro(client.send_message(message.channel, ("Message Length: "+str(text_len))), client)
