@@ -1,6 +1,6 @@
 from constants import *
 
-def aboutscript(command, client, message):
+def script(command, client, message):
     run_coro(client.send_message(message.channel, "I shitpost memes and copypastas"), client)
     run_coro(client.send_message(message.channel, "Version "+str(versionnumber)), client)
     run_coro(client.send_message(message.channel, "https://github.com/Shitscord/Shitscord"), client)

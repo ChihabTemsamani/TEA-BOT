@@ -21,15 +21,5 @@ Current command sets include:
  - Dankmeme
 # Modularity
 Commands are formatted as modules now! Each command has its own python file which the script is imported as a function from.
-Example: the copypasta script is stored in copypasta.py, containting the function copypastascript, and stated in the commands list as copypasta.
+Example: the copypasta script is stored in copypasta.py, containting the function sript, and stated in the commands list as copypasta.
 Following this naming scheme, commands can be essentially dynamically added to the bot. This allows less messy development and easier repairs and containment should a command bug out.
-
-# Copypasta
- The copypasta files are stored in the copypasta_content.py file where the copypasta name in the cpname variable shares the same index value as the pasta itself in the cptext variable.
- If supplied with Reddit API keys the bot can automatically pull copypastas from Reddit, and the bot will automatically split the text by its spaces into <2000 character messages for Discord.
-
-#Subreddit
- The subreddit command allows for a random image to be retrieved from a specific subreddit. This relies on the Reddit API Keys.
- 
-#Dankmeme
- This command will retrieve a random image from a random subreddit contained in a list of subreddits.

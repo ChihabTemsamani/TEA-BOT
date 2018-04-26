@@ -40,7 +40,5 @@ while True:
     shutil.move("temp/memeindex.py","memeindex.py")
     print("Done")
     
-    
-    
     time.sleep(300)
     

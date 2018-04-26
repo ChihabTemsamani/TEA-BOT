@@ -1,7 +1,7 @@
 from constants import *
 import praw, reddit_config, urllib.request, random, time, os
 
-def subredditscript(command, client, message):
+def script(command, client, message):
     if len(command) < 4:
         run_coro(client.send_message(message.channel, "You must enter a media type [image] and a subreddit."), client)
         return
