@@ -1,6 +1,6 @@
 import asyncio
 
-cmdlist = ["help","about","copypasta", "dankmeme", "cache","subreddit"]  # All available commands go here
+cmdlist = ["help","about","copypasta", "dankmeme","subreddit"]  # All available commands go here
 
 versionnumber="1.38"
 

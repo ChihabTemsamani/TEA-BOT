@@ -1,7 +1,7 @@
 from constants import *
 import praw, reddit_config, urllib.request, random, time, os
 
-def dankmemescript(command, client, message):
+def script(command, client, message):
     subredditchoice=["me_irl","trippinthroughtime","youdontsurf","vsaucememes","trebuchetmemes","dankmemes","lossedits","labelmemes","meirl"]    
     subredditcount=len(subredditchoice)
     chosenreddit=random.randint(0,subredditcount-1)

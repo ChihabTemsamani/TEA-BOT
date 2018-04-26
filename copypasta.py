@@ -6,7 +6,7 @@ import cpindex
 
 
 
-def copypastascript(command, client, message):
+def script(command, client, message):
     if len(command) < 3:
         run_coro(client.send_message(message.channel, "You must input a copypasta, `list`, or random"), client)
         return
