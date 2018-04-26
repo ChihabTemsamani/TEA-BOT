@@ -1,8 +1,9 @@
 from constants import *
 from importlib import reload
 from textsend import textmessagesend
-import praw, reddit_config, time
+import praw, reddit_config, random, requests
 import cpindex
+
 
 
 
@@ -18,6 +19,7 @@ def script(command, client, message):
         cpnamesstr = (" ".join(cpnames.cplibrary[0:]))  # Get list of CP names
         textmessagesend(cpnamesstr, client, message)  # Send List
         run_coro(client.send_message(message.channel, "You can also try `random` to try your luck."), client)
+        return
 
 
     #Copypasta random
@@ -25,29 +27,21 @@ def script(command, client, message):
         print("Trying to get a random CP from reddit. This could take a moment.")
         reddit = praw.Reddit(client_id=reddit_config.client_id, client_secret=reddit_config.client_secret,
                              user_agent=reddit_config.user_agent)
-
-
-
-    char_length_2000_debug=False
-    if char_length_2000_debug==True:
-        g=True
-        ranpasta_len=0
-        while g:
-            sr = reddit.subreddit("copypasta")
-            random_pasta=sr.random().selftext #Pasta acquired
-            ranpasta_len=len(random_pasta) #length of pasta found to allow for proper message division
-            print("Copypasta Length in Characters: ", ranpasta_len)
-            if ranpasta_len>2000:
-                g=False
-    else:
-        sr = reddit.subreddit("copypasta")
-        random_pasta=sr.random().selftext #Pasta acquired
-    textmessagesend(random_pasta, client, message)
         
-'''
-    elif command[2].lower() in cpnames:
-        cprequest = command[2].lower()  # All lowercase name
-        cplocate = cpnames.index(cprequest)  # Get index number of CP
-        cpserve = cplist[cplocate]  # Get the CP
-        run_coro(client.send_message(message.channel, cpserve), client)  # Send CP
-'''
+        sr = reddit.subreddit("copypasta")
+        pasta=sr.random().selftext #Pasta acquired
+        
+        
+    #Valid copypasta Name  
+    elif command[2].lower() in cpindex.cplibrary:
+        cpname = command[2].lower()  # All lowercase name
+        cpurl=("http://raw.githubusercontent.com/Shitscord/cp-lib/master/"+cpname+".txt")
+        durl=requests.get(cpurl)
+        randint=random.randint(1,1000)
+        lname=("temp/"+str(randint)+".txt")
+        with open(lname, "wb") as w:
+            w.write(durl.content)
+        lfile=open(lname,"r",encoding="utf8")
+        pasta= lfile.read()
+
+    textmessagesend(pasta, client, message)
