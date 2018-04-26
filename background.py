@@ -12,10 +12,10 @@ while True:
     
     
     #Clear Images Folder
-    print("Clearing the images folder")
-    for item in os.listdir("images"):
+    print("Clearing the temp folder")
+    for item in os.listdir("temp"):
         if not item.endswith(".lock") and not os._exists(item + ".lock"):
-            filename = ("images/" + item)
+            filename = ("temp/" + item)
             print("Removing: ", filename)
             os.remove(filename)
             
