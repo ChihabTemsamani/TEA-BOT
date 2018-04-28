@@ -35,7 +35,7 @@ def script(command, client, message):
     #Valid copypasta name, gets url, downloads file, reads file, sends text
     elif command[2].lower() in cpindex.cplibrary:
         cpname = command[2].lower()  # All lowercase name
-        cpurl=("http://raw.githubusercontent.com/Shitscord/cp-lib/master/"+cpname+".txt")
+        cpurl=("http://raw.githubusercontent.com/Shitscord/cp-lib/master/lib/"+cpname+".txt")
         durl=requests.get(cpurl)
         randint=random.randint(1,1000)
         lname=("temp/"+str(randint)+".txt")
