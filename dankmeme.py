@@ -13,7 +13,7 @@ def script(command, client, message):
     #Find the max amount of posts in a subreddit, or whatever reddit tops out at (usually 100) in order to prevent index errors
     #Max posts stored as postcount variable
     postcount = 0
-    for post in reddit.subreddit(srname).top(limit = 100):
+    for post in reddit.subreddit(srname).hot(limit = 100):
         postcount += 1
     print("Post range = ",postcount)   
     x=True
