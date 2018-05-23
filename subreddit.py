@@ -43,7 +43,7 @@ def script(command, client, message):
                 x=False
                 print("URL is to an image file")
             w += 1
-            if w==5:
+            if w==30:
                 x=False
                 run_coro(client.send_message(message.channel, "An image could not be found in this subreddit."), client)
                 foundimage=0
