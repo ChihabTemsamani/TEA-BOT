@@ -32,28 +32,23 @@ if not os.path.exists("images"):
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="!")
-loggingchannel = discord.Object(id=435092761268584450)
+
 
 @client.event
 async def on_ready():
     print("Bot is online and connected to Discord")  # When Bot Connects
-    await client.send_message(loggingchannel, "Bot Online")
+    await client.send_message(constants.loggingchannel, "Bot Online")
 
 @client.event
 async def on_message(message):
-    if message.content.upper().startswith('!SHITSCORD'):
-        print("I Have Been Summoned")
+    if message.content.upper().startswith('!'):
         command = message.content.split(" ")
         print("User States:", command)
-        # checks if input is valid command with weird double if else and acts accordingly
-        if len(command) > 1:
-            if command[1].lower() in constants.cmdlist:  # If command is correct (all command actions (most of bot) go here)
-                procopen.procssschedule(command, client, message)
-                await client.delete_message(message)
-            else:
-                await client.send_message(message.channel, "Thats not a command")
-        else:
-            await client.send_message(message.channel, ":poop:")  # If no command is given
-            await client.send_message(message.channel, "Type !shitscord 'help' or 'about' for more information.")
-
+        
+        commodule=''.join(command[0].split('!', 1)).lower()
+        
+        print("Calling: ", commodule)
+        if commodule in constants.cmdlist:
+            procopen.procssschedule(command, client, message, commodule)
+            await client.delete_message(message)
 client.run(token)
