@@ -2,12 +2,12 @@ from constants import *
 import praw, reddit_config, urllib.request, random, time, os
 
 def script(command, client, message):
-    if len(command) < 4:
+    if len(command) < 3:
         run_coro(client.send_message(message.channel, "You must enter a media type [image] and a subreddit."), client)
         return
     
-    if command[2].lower() == "image":
-        srname=command[3]
+    if command[1].lower() == "image":
+        srname=command[2]
         print("Getting random image from",srname)
         reddit = praw.Reddit(client_id=reddit_config.client_id, client_secret=reddit_config.client_secret,
                              user_agent=reddit_config.user_agent)

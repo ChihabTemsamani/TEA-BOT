@@ -8,13 +8,13 @@ import cpindex
 
 
 def script(command, client, message):
-    if len(command) < 3:
+    if len(command) < 2:
         run_coro(client.send_message(message.channel, "You must input a copypasta, `list`, or random"), client)
         return
 
 
     #Copypasta List
-    if command[2].lower() == "list":
+    if command[1].lower() == "list":
         cpnames = reload(cpindex)
         cpnamesstr = (" ".join(cpnames.cplibrary[0:]))  # Get list of CP names
         textsend.send(cpnamesstr, client, message)  # Send List
@@ -23,7 +23,7 @@ def script(command, client, message):
 
 
     #Copypasta random
-    elif command[2].lower() == "random":
+    elif command[1].lower() == "random":
         print("Trying to get a random CP from reddit. This could take a moment.")
         reddit = praw.Reddit(client_id=reddit_config.client_id, client_secret=reddit_config.client_secret,
                              user_agent=reddit_config.user_agent)
@@ -33,8 +33,8 @@ def script(command, client, message):
         
         
     #Valid copypasta name, gets url, downloads file, reads file, sends text
-    elif command[2].lower() in cpindex.cplibrary:
-        cpname = command[2].lower()  # All lowercase name
+    elif command[1].lower() in cpindex.cplibrary:
+        cpname = command[1].lower()  # All lowercase name
         cpurl=("http://raw.githubusercontent.com/Shitscord/cp-lib/master/lib/"+cpname+".txt")
         durl=requests.get(cpurl)
         randint=random.randint(1,1000)

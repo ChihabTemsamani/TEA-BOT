@@ -1,14 +1,14 @@
 from threading import Thread
 
-def functioninit(command, client, message):
+def functioninit(command, client, message, commodule):
  
-    impcom = ("import " + str(command[1]))
+    impcom = ("import " + commodule)
     exec(impcom)
-    cmdexec = command[1] + ".script(command, client, message)"
+    cmdexec = commodule + ".script(command, client, message)"
     exec(cmdexec)
 
-def procssschedule(command, client, message):
+def procssschedule(command, client, message, commodule):
 
-    background_thread = Thread(target=functioninit, args=(command, client, message))
+    background_thread = Thread(target=functioninit, args=(command, client, message, commodule))
     background_thread.start()
     

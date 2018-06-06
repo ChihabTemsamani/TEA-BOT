@@ -1,9 +1,8 @@
-import asyncio
+import asyncio, discord
 
-cmdlist = ["help","about","copypasta", "dankmeme","subreddit"]  # All available commands go here
+cmdlist = ["help","copypasta", "dankmeme","subreddit"]  # All available commands go here
 
-versionnumber="1.38"
-
+loggingchannel = discord.Object(id=435092761268584450)
 
 def run_coro(coro, client):
     fut = asyncio.run_coroutine_threadsafe(coro, client.loop)
