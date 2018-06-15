@@ -9,8 +9,7 @@ if not os.path.exists("temp"):
     
 while True:
     #This script runs every 5 minutes
-    
-    
+        
     #Clear Images Folder
     print("Clearing the temp folder")
     for item in os.listdir("temp"):
