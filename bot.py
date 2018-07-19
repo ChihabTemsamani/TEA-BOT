@@ -47,8 +47,10 @@ async def on_message(message):
         
         commodule=''.join(command[0].split('!', 1)).lower()
         
-        print("Calling: ", commodule)
+        print("Calling: ", commodule)   
         if commodule in constants.cmdlist:
             procopen.procssschedule(command, client, message, commodule)
-            await client.delete_message(message)
+        if "-p" not in message.content.lower():
+            time.sleep(3)
+            await client.delete_message(message)  
 client.run(token)

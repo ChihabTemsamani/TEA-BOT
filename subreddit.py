@@ -1,6 +1,9 @@
 import urllib.request, random, time, os, rif, constants
 
 def script(command, client, message):
+    sortbymodes=["hot","new","controversial","top","rising"]
+    
+    
     if len(command) < 3:
         constants.run_coro(client.send_message(message.channel, "You must enter a media type [image] and a subreddit."), client)
         return
@@ -9,24 +12,36 @@ def script(command, client, message):
         srname=command[2]
         print("Getting random image from",srname)
         
+        #Sortby
         if "-s" in command:
             sloc=command.index("-s")
-            if len(command)==sloc+1 or len(command)<sloc+1:
-                sortby="hot" #Use Default
+            if len(command)>sloc+1 and str(command[sloc+1]).lower() in sortbymodes:
+                sortby=str(command[sloc+1]).lower()
+            else:
+                sortby="hot"
+        else:
+            sortby="hot"
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        #Range
+        if "-r" in command:
+            rloc=command.index("-r")
+            if len(command)>rloc+1 and int(command[rloc+1])>0 and int(command[rloc+1])<1000:
+                maxrange=int(command[rloc+1])
+            else:
+                maxrange=100
+        else:
+            maxrange=100    
+    
+        #Attempts
+        if "-a" in command:
+            aloc=command.index("-a")
+            if len(command)>sloc+1 and int(command[aloc+1])>0 and int(command[aloc+1])<30:
+                attempts=int(command[aloc+1])
+            else:
+                attempts=5
+        else:
+            attempts=5
+      
         url=rif.find(srname, sortby, maxrange, attempts)        
         
         if url=="sr_invalid":
