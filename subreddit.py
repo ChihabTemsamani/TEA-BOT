@@ -15,7 +15,7 @@ def script(command, client, message):
         #Sortby
         if "-s" in str(command).lower():
             sloc=command.index("-s")
-            if len(command)>sloc+1 and str(command[sloc+1]).lower() in sortbymodes:
+            if len(command)>sloc+1 or len(command)==sloc+1 and str(command[sloc+1]).lower() in sortbymodes:
                 sortby=str(command[sloc+1]).lower()
             else:
                 sortby="hot"
@@ -25,7 +25,7 @@ def script(command, client, message):
         #Range
         if "-r" in str(command).lower():
             rloc=command.index("-r")
-            if len(command)>rloc+1 and int(command[rloc+1])>0 and int(command[rloc+1])<1000:
+            if len(command)>rloc+1 or len(command)==rloc+1 and int(command[rloc+1])>0 and int(command[rloc+1])<1000:
                 maxrange=int(command[rloc+1])
             else:
                 maxrange=100
@@ -35,7 +35,7 @@ def script(command, client, message):
         #Attempts
         if "-a" in str(command).lower():
             aloc=command.index("-a")
-            if len(command)>aloc+1 and int(command[aloc+1])>0 and int(command[aloc+1])<30:
+            if len(command)>aloc+1 or len(command)==aloc+1 and int(command[aloc+1])>0 and int(command[aloc+1])<30:
                 attempts=int(command[aloc+1])
             else:
                 attempts=5
@@ -57,7 +57,6 @@ def script(command, client, message):
         x=0
         while x<spam:
             url=rif.find(srname, sortby, maxrange, attempts)  
-            
         
             if url=="sr_invalid":
                 print("Invalid Subreddit")
@@ -82,12 +81,12 @@ def script(command, client, message):
                 urllib.request.urlretrieve(url, file_name)
                 open(file_name + ".lock","a").close()
                 print("Image placed at: ",file_name," and locked")
-                time.sleep(1)
+                time.sleep(2)
                 print("Sending Image")
                 constants.run_coro(client.send_file(message.channel, file_name), client) # Send Image
                 print("Sent Image")
                 os.remove(file_name + ".lock")
                 print(file_name, " unlocked.")
-
+            
             x=x+1
            
